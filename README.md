@@ -4,14 +4,19 @@ Reading in the relevant data files
 the following variables were read from the following data sets:
 
 features: "../features.txt" (561 x 1)
+
 activityLabels: "../activity_labels.txt" (6 x 1)
 
 trainData: "../train/X_train.txt" (7352 x 561)
+
 trainSubjects: "../train/subject_train.txt" (7352 x 1)
+
 trainLabels: "../train/y_train.txt" (7352 x 1)
 
 testData: "../test/X_test.txt" (2947 x 561)
+
 testSubjects: "../test/subject_test.txt" (2947 x 1)
+
 testLabels: "../test/y_test.txt" (2947 x 1)
 
 colbind and rowbind to merge the data
@@ -20,6 +25,7 @@ colbind and rowbind to merge the data
 the working data is merged as follows (graphically speaking)
 
 allData = (trainData | trainSubjects | trainLabels)
+
           (testData  | testSubjects  | testLabels)
           
 This gives a (10299 x 563 array)
