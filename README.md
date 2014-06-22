@@ -24,7 +24,9 @@ colbind and rowbind to merge the data
 
 the working data is merged as follows (graphically speaking)
 
-allData = (trainData | trainSubjects | trainLabels)
+allData = 
+
+          (trainData | trainSubjects | trainLabels)
 
           (testData  | testSubjects  | testLabels)
           
