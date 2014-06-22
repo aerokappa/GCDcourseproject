@@ -55,9 +55,9 @@ tidyData$ActivityLabel <- activityLabels[tidyData$ActivityLabel,]
 #
 actvSubjSplit <- split(tidyData,interaction(tidyData$ActivityLabel,tidyData$Subject))
 
-colMeanFunction <- function(x) apply(x[,1:66],2,mean)
+colMeanFunction <- function(x) apply(x[,1:66],2,mean) #find the colmeans of each variable for a particular intersection split
 
-finalDataAsMatrix <- sapply(actvSubjSplit,colMeanFunction)
+finalDataAsMatrix <- sapply(actvSubjSplit,colMeanFunction) # do above for each intersection split
 
 finalData <- as.data.frame(t(finalDataAsMatrix))
 
@@ -67,4 +67,4 @@ finalData$Subject <- rep(1:30,each=6)
 #
 #  Write the pretty data file!
 #
-write.csv(finalData[,c(68,67,1:66)],file="summarizedTidyData.csv",row.names=FALSE)
+write.table(finalData[,c(68,67,1:66)],file="summarizedTidyData.txt",row.names=FALSE,sep=" ")
